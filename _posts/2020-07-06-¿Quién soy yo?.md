@@ -8,7 +8,6 @@ toc: true
 classes: wide
 ---
 
-Te doy la bienvenida a mi blog
 
 Mi nombre es Erick Alexander Mendoza Vergara, nací en Vinces
 Soy de la Provincia de Los Ríos - Palenque, 
