@@ -88,11 +88,9 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Moss GU"
+title                    : "Eric Mendoza"
 title_separator          : "-"
-name                     : "Moss GU"
-description              : "Code matters."
-url                      : "https://mossgreen.github.io"
+name                     : "Eric"
 baseurl                  : #"/blog" the subpath of your site, e.g. "/blog"
 repository               :  "mossgreen/mossgreen.github.io" # GitHub username/repo-name e.g.
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
@@ -152,7 +150,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : "/assets/images/bio-photo.jpg"
+og_image                 : "/assets/images/e.png"
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -170,7 +168,7 @@ analytics:
 # Site Author
 author:
   name             : "Eric Mendoza"
-  avatar           : "/assets/images/e.jpg"
+  avatar           : "/assets/images/e.png"
   bio              : "Hola Bienvenido a mi blog."
   location         : "Los Ríos, Ecuador"
   email            : "ericmendozagithub@gmail.com"
