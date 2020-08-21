@@ -1,0 +1,25 @@
+---
+title: Servlet Container and Spring Framework
+search: true
+tags:
+  - Hola
+  - Acerca de Mí
+toc: true
+classes: wide
+---
+
+Hola Soy Eric Mendoza y te doy la bienvenida a mi blog
+
+Mi nombre es Erick Alexander Mendoza Vergara, nací en Vinces
+Soy de la Provincia de Los Ríos - Palenque, 
+Tengo 18 años y me encanta el Futbol.
+En mis tiempos libres me gusta escuchar música y ver videos que esten relacionados a las nuevas tecnologías que van surgiendo poco a poco, 
+espero poder convertirme en un desarrollador profesional.
+
+### Resumen de estudios
+
+ Mis primeros años de estudios fue en la "Unidad Educativa Nuestra Señora De Fátima" desde Jardín hasta séptimo año de básica.
+ Luego pasé al Colegio "Lautaro Aspiazu Sedeño" donde estuve desde octavo hasta tercero de bachillerato. 
+ Actualmente estudio en la "Universidad de Guayaquil" la carrera Ingeniería en Software.
+
+
