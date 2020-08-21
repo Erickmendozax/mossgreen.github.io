@@ -4,10 +4,10 @@ remote_theme             : "mmistakes/minimal-mistakes"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
+title                    : "Inicio"
 title_separator          : "-"
-name                     : "Your Name"
-description              : "An amazing website."
+name                     : "Eric Mendoza"
+description              : ""
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -169,12 +169,12 @@ analytics:
 
 # Site Author
 author:
-  name             : "Moss GU"
-  avatar           : "/assets/images/bio-photo.jpg"
-  bio              : "No Magic."
-  location         : "Auckland, New Zealand"
-  email            : "mossgu@outlook.com"
-  uri              : "https://mossgreen.github.io"
+  name             : "Eric Mendoza"
+  avatar           : "/assets/images/e.jpg"
+  bio              : "Hola Bienvenido a mi blog."
+  location         : "Los Ríos, Ecuador"
+  email            : "ericmendozagithub@gmail.com"
+  uri              : "https://github.com/Erickmendozax"
   home             : # null (default), "absolute or relative url to link to author home"
   bitbucket        :
   codepen          :
@@ -182,24 +182,20 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "mossgreen"
+  github           : "Ericmendozax"
   gitlab           :
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : "mossgu"
   pinterest        :
   soundcloud       :
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
   steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
   tumblr           :
-  twitter          : "gufeifei"
   vine             :
   weibo            :
   xing             :
-  youtube          : # "https://youtube.com/c/MichaelRoseDesign"
-
 
 # Reading Files
 include:
