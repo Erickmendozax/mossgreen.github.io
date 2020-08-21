@@ -1,104 +1,78 @@
 ---
-title: Spring Scheduled Tasks Stop Working
+title: Inteligencia Artificial con Python
 search: true
 tags:
-  - Spring
-  - Scheduled Tasks
+  - AI
 toc: true
-toc_label: 'My Table of Contents'
+toc_label: ''
 toc_icon: 'cog'
 classes: wide
 ---
+En la actualidad se realizan esfuerzos que permitan conocer el mejor lenguaje de programación para la inteligencia artificial y las neuronas; en este caso Python se ha ido adelante. Python es un lenguaje de programación muy popular a nivel mundial. La Inteligencia Artificial trabaja mejor con Python porque:
 
-Investigate and fix stopped @Scheduled methods in Spring.
+>Python tiene una comunidad mayor que lo respalda y demuestra ser superior que Java.
+>
+>Cuenta con una cantidad de bibliotecas que ofrecen recursos open-source de IA que siempre están disponibles; mucho mayor que Java.
+>
+>Python es un lenguaje dinámico, lo que permite realizar programaciones más rápidas que al utilizar Java. Asimismo, ofrece la oportunidad de aprender en menor tiempo.
+>
+>Python suministra mayor cantidad de recursos para aprender IA, con muchas plataformas que proporcionan una educación en línea a través de artículos de blog, libros, cursos, entre otras que día a día aparecen.
+![](/assets/images/python.jpg)
 
-## The issue
+### ¿Cuáles características y ventajas presenta Python?
 
-I have a Spring Scheduled task stopped working on the production. In the log, I see the task run every minute, and it just disappears for good untile I restarted the docker container.
+>Python el lenguaje interpretado no necesita ser compilado. El desarrollador puede hacer uso de forma directa y así, aplicar el programa. Por lo que, se considera que es un lenguaje completo.
 
-```json
-2046-05-22 14:04:32.801 [   scheduling-1] org.xxx.xxx.xxx: scheduled task is running
-2046-05-22 14:05:32.801 [   scheduling-1] org.xxx.xxx.xxx: scheduled task is running
-2046-05-22 14:06:32.801 [   scheduling-1] org.xxx.xxx.xxx: scheduled task is running
-```
+>Puede ser utilizado en situaciones algo complejas, debido a que, se considera un lenguaje de un nivel muy alto. Este tipo de lenguaje se puede ocupar de matrices, aritmética, objetos y variables; así como de algunos otros conceptos de la computación y hacerlos muy completos para mayor en su uso.
 
-## Investigate
+>Python como lenguaje de programación puede ser utilizado por cualquier público en dominios y tecnologías, porque es general.
 
-### 1. ThreadPool size
+>Python tiene gestión de memoria automática la cual acepta una variedad de paradigmas de programación.
 
-The scheduled tasks thread pool size by default is 1. I had a look at our Services, there're 10 more scheduled tasks other than mine. So the size should bigger.
+>Está disponible para todos los sistemas operativos.  Además, presenta una oferta de código abierto llamada CPython, la cual ha tenido mucha aceptación.
 
-In the log, `scheduling-1` is the default thread name. This thread is reused all the time. If there is anything run too long, and the thread pool cannot recycle it, all scheduled tasks will stop.
+>Veamos ahora cómo el uso de Python para la falta de elegancia artificial nos da una ventaja sobre otros lenguajes de programación populares.
 
-### 2. AOP method to log all `@Scheduled` execution time
+### ¿Por qué inteligencia artificial y Python?
 
-1. Dependencies
+>Python es uno de los lenguajes más populares a nivel mundial en el mercado actual.
+>
+>Promete el menor código entre otros lenguajes.
+>
+>Python tiene bibliotecas como Numpy, Scipy y Pybrain, que se utilizan para la computación científica, computación avanzada, y el aprendizaje automático. Estas razones que convierten a Python, en uno de los mejores lenguajes para Inteligencia Artificial.
+>
+>Python es una opción flexible y popular para usar en distintas plataformas y tecnologías, porque es un lenguaje independiente de la plataforma.
+>
+>Puede usar IDE para la comprobación de los códigos y es de ayuda para los desarrolladores que pelean con distintos algoritmos.
 
-    ```gradle
-    compile("org.springframework.boot:spring-boot-starter-aop")
-    ```
+### Python junto a la inteligencia artificial
 
-2. AOP
+-Python junto a NumPy, scikit-learn, iPython Notebook y matplotlib, son la base para iniciar un proyecto de IA.
 
-    ```java
-    @Aspect
-    @Component
-    public class LoggingAspect {
+-NumPy . es utlizada como contenedor de datos genéricos que comprenden un objeto de matriz N-dimensional.
 
-        @Around("@annotation(org.springframework.scheduling.annotation.Scheduled)")
-        public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
-            long start = System.currentTimeMillis();
+-Pandas, la biblioteca de código abierto, suministra a los usuarios estructuras de datos y herramientas analíticas, muy fáciles para usar con Python.
 
-            Object proceed = joinPoint.proceed();
+-Matplotlib es una biblioteca de trazado 2D. Se puede utilizar matplotlib hasta por 6 usuarios de la interfaz gráfica de kits de herramientas, scripts y servidores de aplicaciones web de Python.
 
-            long executionTime = System.currentTimeMillis() - start;
+Entre las bibliotecas de Python para la IA en general, tenemos:
 
-            if (executionTime > 1000) {
-                System.out.println(joinPoint.getSignature() + " executed in " + executionTime + "ms ----- attention");
-            } else {
-                System.out.println(joinPoint.getSignature() + " executed in " + executionTime + "ms");
-            }
+-AIMA: Puede implementarse en Python para manejar los algoritmos de Inteligencia Artificial.
 
-            return proceed;
-        }
-    }
-    ```
+-pyDatalog: Es un motor de programación lógica, que se utiliza en Python.
 
-    NB: `@annotation(org.springframework.scheduling.annotation.Scheduled)` is the package name.
+-SimpleAI: Está centrada en suministrar una biblioteca de uso fácil la cual está bien documentada y probada.
 
-3. Find your long-running tasks
+-EasyAI: suministra las tablas de transposición, y resolución de juegos.
 
-    Watch your log and find out those tasks took a too long time.
+Python para ser usado como lenguaje de máquina
 
-    - Query/Update db actions
-    - IO
+Python es utilizado para el aprendizaje automático. Por ello, presenta varias bibliotecas que cumplen este propósito:
 
-## Fix
+-SCIKIT-LEARN – SCIKIT-LEARN: herramienta eficiente para analizar  datos usando Python. Con código abierto y la biblioteca de aprendizaje es la más popular.
 
-After investigation, I've known the tasks that took most of the time and how many threads I need.
+-PyML: Puede ser utilizada con Linux y Mac OS X.
 
-### 1. Larger ThreadPool size
+-MDP-Toolkit: Es un marco de procesamiento de datos de Python que se expande muy fácil, contiene una colección de algoritmos de aprendizaje supervisados ​​y no supervisados.
 
-Add `config/ScheduledTaskConfig.java`
-
-```java
-@Configuration
-public class ScheduledTaskConfig {
-
-    @Bean
-    public ThreadPoolTaskScheduler taskScheduler (){
-        ThreadPoolTaskScheduler taskScheduler = new ThreadPoolTaskScheduler();
-        taskScheduler.setPoolSize(3);
-        return taskScheduler;
-    }
-}
-```
-
-## Test
-
-`//todo`
-
-## References
-
-- [Methods annotated with @Scheduled stops working in Open Source Spring](https://community.pivotal.io/s/article/methods-annotated-with-scheduled-stops-working?language=en_US)
-- [A Guide to the Spring Task Scheduler](https://www.baeldung.com/spring-task-scheduler)
+-PyBrain: es una biblioteca de aprendizaje automático por módulos para Python suministra variedad de entornos para probar y comparar los algoritmos.
